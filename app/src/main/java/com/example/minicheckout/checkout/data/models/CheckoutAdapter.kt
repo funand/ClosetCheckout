@@ -32,6 +32,8 @@ class CheckoutAdapter(private val clickListener: ClickListener) :
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = productList[position]
         holder.bind(product)
+        // for full screen
+        // holder.itemView.minimumHeight = Resources.getSystem().displayMetrics.heightPixels - 40
     }
 
     fun updateProducts(productList: List<Product>) {

@@ -1,8 +1,5 @@
 package com.example.minicheckout.checkout.data.models
 
-import android.app.Activity
-import android.content.res.Resources
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

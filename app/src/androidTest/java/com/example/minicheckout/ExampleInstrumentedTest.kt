@@ -41,7 +41,7 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun testbackButtonClick_shouldLeaveInvoiceActivity_checkoutBackButtonIsPresent() {
+    fun testBackButtonClick_shouldLeaveInvoiceActivity_checkoutBackButtonIsPresent() {
         onView(withId(R.id.invoice_back_btn)).perform(click())
         onView(withId(R.id.checkoutButton))
     }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_error_screen_logo_margin_top">90dp</dimen>
+    <dimen name="checkout_padding">5dp</dimen>
+    <dimen name="general_margin">20dp</dimen>
+    <dimen name="general_medium_margin">10dp</dimen>
+    <dimen name="large_margin">30dp</dimen>
+    <dimen name="big_text">35sp</dimen>
+    <dimen name="medium_text">25sp</dimen>
+</resources>

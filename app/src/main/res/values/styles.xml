@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="OutlinedButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="TextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+</resources>
+

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MiniCheckout</string>
+    <string name="user_firstname">Ethel</string>
+    <string name="user_lastname">McBuyfive</string>
+    <string name="user_email">ethel.mcbuyfive@example.com</string>
+    <string name="user_profileimage">https://fake-mobile-backend.production.stitchfix.com/image/selfie.jpg</string>
+    <string name="purchaseflow_check_out">Check Out</string>
+    <string name="profile_contentdescription_profile_photo">profile photo</string>
+
+    <!--  Checkout Activity  -->
+    <string name="checkout_name">Name: </string>
+    <string name="checkout_brand">Brand: </string>
+    <string name="checkout_price">Price: </string>
+    <string name="checkout_image">Image</string>
+    <string name="toast_msg_empty_list">There are no items, Try again later</string>
+    <string name="checkout_title">"Select items to keep, deselect items to remove"</string>
+
+    <!--  Invoice Activity  -->
+    <string name="invoice">INVOICE</string>
+    <string name="invoice_total">TOTAL: </string>
+    <string name="invoice_empty_cart">$00.00</string>
+    <string name="invoice_back_btn_label">"Go Back To Checkout"</string>
+</resources>

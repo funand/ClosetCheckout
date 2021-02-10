@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.minicheckout.checkout.data.models.ClickListener
-import com.example.minicheckout.core.utils.Filter.filterProductList
 import com.example.minicheckout.checkout.data.models.InvoiceAdapter
+import com.example.minicheckout.core.utils.Filter.filterProductList
 import com.example.minicheckout.core.utils.SortTypeEnum
 import com.example.minicheckout.core.utils.formatCurrency
+import com.example.minicheckout.main.databinding.ActivityInvoiceBinding
 import com.example.minicheckout.repository.network.data.Product
-import kotlinx.android.synthetic.main.activity_invoice.*
 import java.math.BigDecimal
 
 class InvoiceActivity : AppCompatActivity() {
@@ -20,8 +20,8 @@ class InvoiceActivity : AppCompatActivity() {
     private val clickListener: ClickListener = this::handleClick
 
     private var invoiceList = mutableListOf<Product>()
-    private lateinit var recyclerView: RecyclerView
     private val adapter = InvoiceAdapter(clickListener)
+    private lateinit var dataBindingUtil: ActivityInvoiceBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +31,11 @@ class InvoiceActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        setContentView(R.layout.activity_invoice)
+        dataBindingUtil = DataBindingUtil.setContentView(this, R.layout.activity_invoice)
 
         invoiceList = intent.getParcelableArrayListExtra("productDataSet") ?: mutableListOf()
 
-        invoice_back_btn.setOnClickListener { onBackPressed() }
+        dataBindingUtil.invoiceBackBtn.setOnClickListener { onBackPressed() }
 
         sortInvoiceList()
         initRecyclerView()
@@ -43,10 +43,10 @@ class InvoiceActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        recyclerView = recyclerview
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+
+        dataBindingUtil.recyclerview.setHasFixedSize(true)
+        dataBindingUtil.recyclerview.layoutManager = LinearLayoutManager(this)
+        dataBindingUtil.recyclerview.adapter = adapter
         invoiceList.let { adapter.updateInvoice(it) }
     }
 
@@ -62,7 +62,7 @@ class InvoiceActivity : AppCompatActivity() {
         for (product: Product in invoiceList) {
             total += product.price.toBigDecimal()
         }
-        invoice_total.text = formatCurrency(total.toString())
+        dataBindingUtil.invoiceTotal.text = formatCurrency(total.toString())
     }
 
     private fun handleClick(product: Product) {

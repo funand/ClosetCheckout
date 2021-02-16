@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,94 +9,75 @@
 
     <ImageView
         android:id="@+id/product_image"
-        android:layout_width="90dp"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/checkout_image"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/ic_launcher"
+        android:contentDescription="@string/checkout_image" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/checkout_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/general_margin"
+        android:layout_toEndOf="@+id/product_image"
+        android:text="@string/checkout_name"
+        tools:ignore="RtlSymmetry" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/checkout_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/checkout_padding"
+        android:layout_toEndOf="@+id/checkout_item_name"
+        android:text="@string/checkout_name"
+        tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:id="@+id/checkout_item_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/checkout_name"
-                android:textAlignment="center" />
+    <TextView
+        android:id="@+id/checkout_item_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkout_item_name"
+        android:layout_marginStart="@dimen/general_margin"
+        android:layout_toEndOf="@+id/product_image"
+        android:text="@string/checkout_brand"
+        tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:id="@+id/checkout_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/checkout_name"
-                android:textAlignment="center" />
+    <TextView
+        android:id="@+id/checkout_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkout_item_name"
+        android:layout_marginStart="@dimen/checkout_padding"
+        android:layout_toEndOf="@+id/checkout_item_brand"
+        android:text="@string/checkout_brand"
+        tools:ignore="RtlSymmetry" />
 
+    <TextView
+        android:id="@+id/checkout_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkout_item_brand"
+        android:layout_marginStart="@dimen/general_margin"
+        android:layout_toEndOf="@+id/product_image"
+        android:text="@string/checkout_price"
+        android:textAlignment="center"
+        tools:ignore="RtlSymmetry" />
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/checkout_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkout_item_brand"
+        android:layout_marginStart="@dimen/checkout_padding"
+        android:layout_toEndOf="@+id/checkout_item_price"
+        android:text="@string/checkout_price"
+        android:textAlignment="center"
+        tools:ignore="RtlSymmetry" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/checkout_item_brand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingStart="@dimen/checkout_padding"
-                android:text="@string/checkout_brand"
-                android:textAlignment="center"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                android:id="@+id/checkout_brand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingStart="@dimen/checkout_padding"
-                android:text="@string/checkout_brand"
-                android:textAlignment="center"
-                tools:ignore="RtlSymmetry" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/checkout_item_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingStart="@dimen/checkout_padding"
-                android:text="@string/checkout_price"
-                android:textAlignment="center"
-                tools:ignore="RtlSymmetry" />
-
-            <TextView
-                android:id="@+id/checkout_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingStart="@dimen/checkout_padding"
-                android:text="@string/checkout_price"
-                android:textAlignment="center"
-                tools:ignore="RtlSymmetry" />
-
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
 
 

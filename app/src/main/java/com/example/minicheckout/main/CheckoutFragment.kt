@@ -10,13 +10,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.minicheckout.checkout.data.models.ClickListener
 import com.example.minicheckout.checkout.data.models.CheckoutAdapter
+import com.example.minicheckout.checkout.data.models.ClickListener
+import com.example.minicheckout.main.databinding.FragmentCheckoutBinding
 import com.example.minicheckout.repository.network.data.BoxResponse
 import com.example.minicheckout.repository.network.data.Product
-import kotlinx.android.synthetic.main.fragment_checkout.view.*
-import kotlin.collections.ArrayList
 
 class CheckoutFragment : Fragment() {
 
@@ -24,7 +22,7 @@ class CheckoutFragment : Fragment() {
     private val clickListener: ClickListener = this::handleClick
     private val adapter = CheckoutAdapter(clickListener)
     private val productDataSet = mutableListOf<Product>()
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataBindingUtil: FragmentCheckoutBinding
 
     companion object {
 
@@ -45,26 +43,22 @@ class CheckoutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView: View = inflater.inflate(
-            R.layout.fragment_checkout,
-            container, false
-        )
+        dataBindingUtil = FragmentCheckoutBinding.inflate(layoutInflater, container, false)
 
-        rootView.checkout_btn.text =
+        dataBindingUtil.checkoutBtn.text =
             requireContext().getText(R.string.purchaseflow_check_out)
-        rootView.checkout_btn.setOnClickListener { startInvoice() }
-        recyclerView = rootView.recycler_view
+        dataBindingUtil.checkoutBtn.setOnClickListener { startInvoice() }
         initRecycleView()
-        return rootView
+        return dataBindingUtil.root
     }
 
 
     private fun initRecycleView() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
-        recyclerView.layoutManager = linearLayoutManager
+        dataBindingUtil.recyclerView.layoutManager = linearLayoutManager
 
-        recyclerView.adapter = adapter
-        recyclerView.setHasFixedSize(true)
+        dataBindingUtil.recyclerView.adapter = adapter
+        dataBindingUtil.recyclerView.setHasFixedSize(true)
         boxResponse?.shipment_items?.let {
             Log.d("FIRST ITEM TAG::", it[0].name)
             displayShipmentList(it)

@@ -15,7 +15,7 @@ import com.example.minicheckout.repository.network.data.BoxResponse
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_startup_layout.*
 
-//TODO display progress bar for loading data from network/database
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var exampleViewModel: ExampleViewModel

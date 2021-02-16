@@ -1,76 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="match_parent"
-    tools:context=".InvoiceActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/invoice_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/general_margin"
-        android:layout_marginBottom="@dimen/general_margin"
-        android:text="@string/invoice"
-        android:textAlignment="center"
-        android:textSize="@dimen/big_text"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/invoice_total_container"
-        app:layout_constraintTop_toBottomOf="@id/invoice_title" />
-
-    <LinearLayout
-        android:id="@+id/invoice_total_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/general_margin"
-        android:layout_marginBottom="@dimen/general_margin"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/invoice_back_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerview">
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        tools:context=".InvoiceActivity">
 
         <TextView
-            android:id="@+id/invoice_total_label"
-            android:layout_width="match_parent"
+            android:id="@+id/invoice_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/invoice_total"
+            android:layout_marginTop="@dimen/general_margin"
+            android:layout_marginBottom="@dimen/general_margin"
+            android:text="@string/invoice"
             android:textAlignment="center"
             android:textSize="@dimen/big_text"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/invoice_total"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/invoice_empty_cart"
+            app:layout_constraintBottom_toTopOf="@id/invoice_total_container"
+            app:layout_constraintTop_toBottomOf="@id/invoice_title" />
+
+        <LinearLayout
+            android:id="@+id/invoice_total_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:layout_marginBottom="@dimen/general_margin"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/invoice_back_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerview">
+
+            <TextView
+                android:id="@+id/invoice_total_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/invoice_total"
+                android:textAlignment="center"
+                android:textSize="@dimen/big_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/invoice_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/invoice_empty_cart"
+                android:textAlignment="center"
+                android:textSize="@dimen/medium_text"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/invoice_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/general_margin"
+            android:text="@string/invoice_back_btn_label"
             android:textAlignment="center"
-            android:textSize="@dimen/medium_text"
-            android:textStyle="bold" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/invoice_total_container" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/invoice_back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/general_margin"
-        android:text="@string/invoice_back_btn_label"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/invoice_total_container" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

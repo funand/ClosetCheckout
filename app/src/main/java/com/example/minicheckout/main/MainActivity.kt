@@ -6,16 +6,18 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.minicheckout.checkout.data.models.ExampleViewModel
 import com.example.minicheckout.extensions.loadCircleCrop
 import com.example.minicheckout.repository.network.data.BoxResponse
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_startup_layout.*
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var exampleViewModel: ExampleViewModel

@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -89,7 +90,18 @@ dependencies {
     // Splash screen
     implementation 'gr.pantrif:easy-android-splash-screen:0.0.1'
 
-    //
+    // For testing
     androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
 
+    def fragment_ktx = "1.2.5"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+}
+
+kapt { useBuildCache = true }
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(0, "seconds")
 }

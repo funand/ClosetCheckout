@@ -15,7 +15,9 @@ import com.example.minicheckout.checkout.data.models.ClickListener
 import com.example.minicheckout.main.databinding.FragmentCheckoutBinding
 import com.example.minicheckout.repository.network.data.BoxResponse
 import com.example.minicheckout.repository.network.data.Product
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CheckoutFragment : Fragment() {
 
     private var boxResponse: BoxResponse? = null

@@ -1,3 +1,24 @@
+Tools added:
+
+Picasso
+Rxjava
+Repository pattern
+MVVM
+Unit testing
+Splash Screen
+Suggestions:
+
+Landscape view with master detail layout
+Instrumentation test with espresso
+Assumptions
+
+Assumed to have real mock screen designs of what the layout should look like (preferably from UX/UI engineers) to increase user experience and retention
+Assumed no caching was needed as this is an app that would always require network calls to get checkout items, and perform checkout functions
+Returning to the checkout screen clears user's invoice
+
+
+
+
 # Table of Contents
 - Problem
 - Requirements

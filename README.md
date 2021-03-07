@@ -1,4 +1,4 @@
-Tools added:
+## Tools included:
 Includes
 * Picasso
 * Rxjava
@@ -15,15 +15,13 @@ Includes
 * ViewModel with DI and other extensions
 * Nice to haves of things such as Themes, colors, fonts, animations, security (Allows Proxy use in `debug` builds), proguard files to enable you to just work but feel free to add more
 
-
-
-Assumptions:
+## Assumptions:
 
 Assumed to have real mock screen designs of what the layout should look like (preferably from UX/UI engineers) to increase user experience and retention
 Assumed no caching was needed as this is an app that would always require network calls to get checkout items, and perform checkout functions
 Returning to the checkout screen clears user's invoice
 
-Suggestions:
+## Suggestions:
 1. Single activity app with navigation graph for multiple fragments
 2. Landscape view with master detail layout
 3. Instrumentation test with espresso
@@ -48,7 +46,6 @@ The checkout flow should display each item. For each item, the user should see:
 * Price
 * Image
 * A UI Control scheme for deciding whether to keep or return the item.
-
 
 After selecting items, the user selected items should be displayed on the invoice view. The invoice view should:
 * List the items that the user is keeping.

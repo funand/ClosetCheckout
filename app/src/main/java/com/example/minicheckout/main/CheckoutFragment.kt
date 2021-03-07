@@ -15,9 +15,7 @@ import com.example.minicheckout.checkout.data.models.ClickListener
 import com.example.minicheckout.main.databinding.FragmentCheckoutBinding
 import com.example.minicheckout.repository.network.data.BoxResponse
 import com.example.minicheckout.repository.network.data.Product
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class CheckoutFragment : Fragment() {
 
     private var boxResponse: BoxResponse? = null
@@ -49,11 +47,10 @@ class CheckoutFragment : Fragment() {
 
         dataBindingUtil.checkoutBtn.text =
             requireContext().getText(R.string.purchaseflow_check_out)
-        dataBindingUtil.checkoutBtn.setOnClickListener { startInvoice() }
+        dataBindingUtil.checkoutBtn.setOnClickListener { startInvoiceActivity() }
         initRecycleView()
         return dataBindingUtil.root
     }
-
 
     private fun initRecycleView() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
@@ -94,7 +91,7 @@ class CheckoutFragment : Fragment() {
         ).show()
     }
 
-    private fun startInvoice() {
+    private fun startInvoiceActivity() {
         val intent = Intent(activity, InvoiceActivity::class.java)
         val productArrayList: ArrayList<Product> = ArrayList(productDataSet.size)
         productArrayList.addAll(productDataSet)
@@ -110,5 +107,4 @@ class CheckoutFragment : Fragment() {
         super.onResume()
         productDataSet.clear()
     }
-
 }

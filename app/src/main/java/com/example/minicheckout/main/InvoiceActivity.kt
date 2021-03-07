@@ -15,6 +15,7 @@ import com.example.minicheckout.main.databinding.ActivityInvoiceBinding
 import com.example.minicheckout.repository.network.data.Product
 import java.math.BigDecimal
 
+// TODO: Add payment screen
 class InvoiceActivity : AppCompatActivity() {
 
     private val clickListener: ClickListener = this::handleClick
@@ -35,6 +36,7 @@ class InvoiceActivity : AppCompatActivity() {
 
         invoiceList = intent.getParcelableArrayListExtra("productDataSet") ?: mutableListOf()
 
+        // returns user to {@link CheckoutFragment}
         dataBindingUtil.invoiceBackBtn.setOnClickListener { onBackPressed() }
 
         sortInvoiceList()

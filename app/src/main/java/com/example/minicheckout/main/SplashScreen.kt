@@ -1,8 +1,8 @@
 package com.example.minicheckout.main
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import gr.net.maroulis.library.EasySplashScreen
 
 class SplashScreen : AppCompatActivity() {

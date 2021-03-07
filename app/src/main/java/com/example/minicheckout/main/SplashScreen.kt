@@ -28,7 +28,7 @@ class SplashScreen : AppCompatActivity() {
             .withTargetActivity(MainActivity::class.java)
             .withSplashTimeOut(5000)
             .withHeaderText("Created by Prince Ikede")
-            .withFooterText("Created for Stitch Fix")
+            .withFooterText("A Shopper's ultimate experience")
             .withBeforeLogoText("Discover a new shopping experience")
             .withAfterLogoText("Ready to get Started")
             .withLogo(R.mipmap.ic_launcher_round)

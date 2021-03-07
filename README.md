@@ -1,12 +1,11 @@
 ## Tools included:
-Includes
 * Picasso
 * Rxjava
 * Repository pattern
 * MVVM
 * Unit testing
 * Splash Screen
-*  Reactive streams via Kotlin Coroutines with Flow, SharedFlow, and StateFlow support
+* Reactive streams via Kotlin Coroutines with Flow, SharedFlow, and StateFlow support
 * Unit and UI Test libraries with some code for Espresso, JUnit, MockK, and Roboelectric (DI and Coroutine support too)
 * Network libraries and code ready to go and implemented for your use (Retrofit + Moshi)
 * Core DI classes implemented with methods ready to use (Hilt / Dagger2)

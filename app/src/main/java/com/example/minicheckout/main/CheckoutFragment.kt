@@ -47,11 +47,10 @@ class CheckoutFragment : Fragment() {
 
         dataBindingUtil.checkoutBtn.text =
             requireContext().getText(R.string.purchaseflow_check_out)
-        dataBindingUtil.checkoutBtn.setOnClickListener { startInvoice() }
+        dataBindingUtil.checkoutBtn.setOnClickListener { startInvoiceActivity() }
         initRecycleView()
         return dataBindingUtil.root
     }
-
 
     private fun initRecycleView() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
@@ -92,7 +91,7 @@ class CheckoutFragment : Fragment() {
         ).show()
     }
 
-    private fun startInvoice() {
+    private fun startInvoiceActivity() {
         val intent = Intent(activity, InvoiceActivity::class.java)
         val productArrayList: ArrayList<Product> = ArrayList(productDataSet.size)
         productArrayList.addAll(productDataSet)
@@ -108,5 +107,4 @@ class CheckoutFragment : Fragment() {
         super.onResume()
         productDataSet.clear()
     }
-
 }

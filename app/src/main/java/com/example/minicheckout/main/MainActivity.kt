@@ -6,19 +6,20 @@ import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.minicheckout.checkout.data.models.ExampleViewModel
 import com.example.minicheckout.extensions.loadCircleCrop
 import com.example.minicheckout.repository.network.data.BoxResponse
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_startup_layout.*
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var exampleViewModel: ExampleViewModel
+    private val exampleViewModel: ExampleViewModel by viewModels()
 
     @SuppressLint("SetTextI18n", "ShowToast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +30,6 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_main)
-
-        exampleViewModel = restoreViewModel()
 
         //Set up Basic page
         profileImage.loadCircleCrop(getString(R.string.user_profileimage))
@@ -63,6 +62,4 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.toast_msg_empty_list, Toast.LENGTH_LONG).show()
         }
     }
-
-    private fun restoreViewModel() = ViewModelProvider(this).get(ExampleViewModel::class.java)
 }
